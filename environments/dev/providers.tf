@@ -1,4 +1,4 @@
-provdiers.tfterraform { 
+terraform { 
     required_providers { 
         aws = { 
             source = "hashicorp/aws" 
@@ -10,3 +10,4 @@ provdiers.tfterraform {
 provider "aws" { 
     region = var.aws_region 
 }
+

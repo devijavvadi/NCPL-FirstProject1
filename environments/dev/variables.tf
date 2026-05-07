@@ -17,3 +17,11 @@ variable "instance_name" {
     description = "Value of the Name tag for the EC2 instance" 
     type = string 
 }
+
+variable "subnet_id" {
+  type = string
+}
+
+variable "iam_instance_profile" {
+  type = string
+}

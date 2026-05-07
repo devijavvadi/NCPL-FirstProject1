@@ -3,7 +3,7 @@ module "ec2" {
   
   instance_type        = var.instance_type
   env                  = var.environment
-  aws_region           = var.aws_region
+ // aws_region           = var.aws_region
   project              = var.project
   subnet_id            = var.subnet_id
   iam_instance_profile = var.iam_instance_profile

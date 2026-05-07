@@ -1,4 +1,4 @@
-this is ec2 main.tf data "aws_ami" "amazon_linux" {
+data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
   filter {

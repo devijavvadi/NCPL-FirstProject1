@@ -20,7 +20,7 @@ module "vpc" {
 module "s3" {
   source = "../../modules/s3"
 
-  bucket_name        = var.bucket_name
+  bucket             = var.bucket_name
   environment        = var.environment
   versioning_enabled = var.versioning_enabled
   sse_algorithm      = var.sse_algorithm

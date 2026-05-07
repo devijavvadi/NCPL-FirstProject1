@@ -4,11 +4,11 @@ variable "vpc_cidr" {
 
 
 variable "public_subnet_cidrs" {
-  type = string
+  type        = list(string)
 }
 
 variable "private_subnet_cidrs" {
-  type = string
+ type        = list(string)
 }
 
 variable "availability_zones" {

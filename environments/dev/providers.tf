@@ -7,12 +7,17 @@ terraform {
             version = "~> 5.0" 
         } 
     } 
-} 
-    
-cloud {
-    organization = "Project-1-Terrafrom-Resources"
 
-    workspaces {
-        name = NCPL-FirstProject1
+    
+    cloud {
+        organization = "Project-1-Terrafrom-Resources"
+
+        workspaces {
+           name = "NCPL-FirstProject1"
+        }
     }
+}
+
+provider "aws" {
+  region = var.aws_region
 }

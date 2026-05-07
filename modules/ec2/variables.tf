@@ -10,7 +10,7 @@ variable "env" {
   type = string
 }
 
-variable "project" {
+variable "iam_instance_profile" {
   type = string
 }
 

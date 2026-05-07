@@ -1,4 +1,6 @@
 terraform { 
+    required_version = ">= 1.5.0"
+
     required_providers { 
         aws = { 
             source = "hashicorp/aws" 
@@ -7,7 +9,10 @@ terraform {
     } 
 } 
     
-provider "aws" { 
-    region = var.aws_region 
-}
+cloud {
+    organization = "Project-1-Terrafrom-Resources"
 
+    workspaces {
+        name = NCPL-FirstProject1
+    }
+}

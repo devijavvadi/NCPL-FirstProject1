@@ -15,3 +15,14 @@ module "vpc" {
   availability_zones   = var.availability_zones
   environment          = var.environment
 }
+
+
+module "s3" {
+  source = "../../modules/s3"
+
+  bucket_name        = var.bucket_name
+  environment        = var.environment
+  versioning_enabled = var.versioning_enabled
+  sse_algorithm      = var.sse_algorithm
+  lifecycle_days     = var.lifecycle_days
+}

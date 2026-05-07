@@ -1,4 +1,4 @@
-output "ec2-instance-id" {
-    description = "EC2 instance ID"
-    value = module.ec2.instance_id
+output "instance_id" {
+  description = "EC2 instance ID"
+  value       = aws_instance.this.id
 }

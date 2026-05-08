@@ -33,15 +33,5 @@ module "iam_user" {
   user_name   = var.user_name
   environment = var.environment
   project     = var.project
-
-  policy_json = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect   = "Allow"
-        Action   = ["s3:ListBucket"]
-        Resource = "*"
-      }
-    ]
-  })
+  policy_json = var.policy_json
 }

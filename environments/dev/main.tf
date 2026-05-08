@@ -1,5 +1,5 @@
 module "ec2" {
-  source = "../../modules/ec2"
+  source = "./modules/ec2"
 
   instance_type = var.instance_type
   environment   = var.environment
@@ -7,7 +7,7 @@ module "ec2" {
 }
 
 module "vpc" {
-  source = "../../modules/vpc"
+  source = "./modules/vpc"
 
   vpc_cidr             = var.vpc_cidr
   public_subnet_cidrs  = var.public_subnet_cidrs
@@ -18,7 +18,7 @@ module "vpc" {
 
 
 module "s3" {
-  source = "../../modules/s3"
+  source = "./modules/s3"
 
   bucket_name        = var.bucket_name
   environment        = var.environment
@@ -28,7 +28,7 @@ module "s3" {
 }
 
 module "iam_user" {
-  source = "../../modules/iam"
+  source = "./modules/iam"
 
   user_name   = var.user_name
   environment = var.environment

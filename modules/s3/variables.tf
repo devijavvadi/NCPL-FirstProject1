@@ -13,3 +13,8 @@ variable "sse_algorithm" {
 variable "lifecycle_days" {
   type    = number
 }
+
+
+variable "environment" {
+  type    = string
+}

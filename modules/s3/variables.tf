@@ -1,5 +1,5 @@
 variable "bucket_name" {
-  string = "NCPL-Project-1-s3-bucket"
+  type = string
 }
 
 variable "versioning_enabled" {

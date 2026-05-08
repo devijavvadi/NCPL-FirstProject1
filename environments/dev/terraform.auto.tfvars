@@ -23,13 +23,13 @@ availability_zones = [
 ]
 user_name = "Devi-dev"
 
-policy_json = {
+policy_json = jsonencode({
   Version = "2012-10-17"
   Statement = [
     {
-      Effect = "Allow"
-      Action = ["s3:ListBucket"]
+      Effect   = "Allow"
+      Action   = ["s3:ListBucket"]
       Resource = "*"
     }
   ]
-}
+})

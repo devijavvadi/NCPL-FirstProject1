@@ -30,7 +30,7 @@ module "s3" {
 module "iam_user" {
   source = "../../modules/iam"
 
-  user_name   = "dev-user-1"
+  user_name   = var.user_name
   environment = var.environment
   project     = var.project
 

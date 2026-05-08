@@ -1,14 +1,19 @@
 resource "aws_iam_user" "this" {
   name = var.user_name
-  path = "/"
 
   tags = {
     Environment = var.environment
+    Project     = var.project
   }
 }
 
-# Optional: Creates Access Key and Secret Key
+resource "aws_iam_user_policy" "this" {
+  name = "${var.user_name}-policy"
+  user = aws_iam_user.this.name
+
+  policy = var.policy_json
+}
+
 resource "aws_iam_access_key" "this" {
-  count = var.create_access_key ? 1 : 0
-  user  = aws_iam_user.this.name
+  user = aws_iam_user.this.name
 }

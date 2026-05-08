@@ -21,4 +21,17 @@ availability_zones = [
   "us-east-1a",
   "us-east-1c"
 ]
+user_name = "Devi-dev"
 
+policy_json = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": "*"
+    }
+  ]
+}
+EOF

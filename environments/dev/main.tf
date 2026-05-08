@@ -20,9 +20,28 @@ module "vpc" {
 module "s3" {
   source = "../../modules/s3"
 
-  bucket_name             = var.bucket_name
+  bucket_name        = var.bucket_name
   environment        = var.environment
   versioning_enabled = var.versioning_enabled
   sse_algorithm      = var.sse_algorithm
   lifecycle_days     = var.lifecycle_days
+}
+
+module "iam_user" {
+  source = "../../modules/iam"
+
+  user_name   = "dev-user-1"
+  environment = var.environment
+  project     = var.project
+
+  policy_json = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = ["s3:ListBucket"]
+        Resource = "*"
+      }
+    ]
+  })
 }

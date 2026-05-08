@@ -1,20 +1,20 @@
-instance_type = "t3.micro"
-project       = "NCPL-Project-1"
+instance_type = "t2.micro"
+project       = "NCPL-Project-prod"
 environment   = "prod"
 aws_region = "us-east-1"
 bucket_name = "NCPL-Project-1-s3-bucket"
 versioning_enabled = true
 sse_algorithm = "AES256"
-lifecycle_days = 30
-vpc_cidr = "10.0.0.0/16"
+lifecycle_days = 60
+vpc_cidr = "10.0.0.0/20"
 
 public_subnet_cidrs = [
-  "10.0.1.0/24",
-  "10.0.2.0/24"
+  "10.0.3.0/24",
+  "10.0.4.0/24"
 ]
 private_subnet_cidrs = [
-  "10.0.11.0/24",
-  "10.0.12.0/24"
+  "10.0.13.0/24",
+  "10.0.14.0/24"
 ]
 
 availability_zones = [
